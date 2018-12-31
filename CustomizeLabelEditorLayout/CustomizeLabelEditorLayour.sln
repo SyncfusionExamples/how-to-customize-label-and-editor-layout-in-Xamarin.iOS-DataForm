@@ -1,0 +1,26 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomizeLabelEditorLayout", "CustomizeLabelEditorLayout.csproj", "{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release-xml|Any CPU = Release-xml|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Release|iPhone.ActiveCfg = Release|iPhone
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Release|iPhone.Build.0 = Release|iPhone
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Debug|iPhone.Build.0 = Debug|iPhone
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Release-xml|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Release-xml|Any CPU.Build.0 = Debug|iPhoneSimulator
+	EndGlobalSection
+EndGlobal
