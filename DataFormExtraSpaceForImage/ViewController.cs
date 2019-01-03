@@ -25,8 +25,7 @@ namespace CustomizeLabelEditorLayout
 
             // Perform any additional setup after loading the view, typically from a nib.
 
-            dataForm = new SfDataForm();//new CoreGraphics.CGRect(10, 100, this.View.Bounds.Width, this.View.Bounds.Height));
-           
+            dataForm = new SfDataForm();
             dataForm.LayoutManager = new DataFormLayoutManagerExt(dataForm);
             dataForm.RegisterEditor("ImageEditor", new CustomEditor(this.dataForm));
             dataForm.RegisterEditor("Image", "ImageEditor");
@@ -41,9 +40,7 @@ namespace CustomizeLabelEditorLayout
             // Release any cached data, images, etc that aren't in use.
         }
     }
-
-    
-
+    
     public class CustomEditor : DataFormEditor<UIImageView>
     {
         public CustomEditor(SfDataForm dataForm) : base(dataForm)
@@ -54,11 +51,9 @@ namespace CustomizeLabelEditorLayout
         {
             var imageView = new UIImageView(UIImage.FromBundle("name.png"));
             return imageView;
-
         }
         protected override void OnInitializeView(DataFormItem dataFormItem, UIImageView view)
         {
-
             base.OnInitializeView(dataFormItem, view);
         }
 		protected override void OnCommitValue(UIImageView view)
@@ -86,25 +81,21 @@ namespace CustomizeLabelEditorLayout
             if (dataFormItem.Name == "Image")
             {
                 DataFormEditorBase editor = null;
-                var defaulteditors = this.DataForm.ItemManager.GetType().GetProperty("DefaultEditors", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(this.DataForm.ItemManager);
-                var detaultEditors = (defaulteditors as Dictionary<string, DataFormEditorBase>);
-                var value = detaultEditors.TryGetValue(dataFormItem.Editor, out editor);
+                var defaultEditors = this.DataForm.ItemManager.GetType().GetProperty("DefaultEditors", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(this.DataForm.ItemManager);
+                var defaultDataFormEditors = (defaultEditors as Dictionary<string, DataFormEditorBase>);
+                var value = defaultDataFormEditors.TryGetValue(dataFormItem.Editor, out editor);
                 if (!value)
                 {
-                    editor = detaultEditors["Text"];
+                    editor = defaultDataFormEditors["Text"];
                 }
 
                 var dataFormItemView = new DataFormItemViewExt();
 
                 ReflectionHelper.SetValue(dataFormItemView, "DataFormItem", dataFormItem);
                 ReflectionHelper.SetValue(dataFormItem, "View", dataFormItemView);
-
                 ReflectionHelper.SetValue(dataFormItemView, "Editor", editor);
 
                 var label = this.GenerateViewForLabel(dataFormItem);
-
-                //if (label != null)
-                    //dataFormItemView.AddSubview(label);
                 var editorMethod = ReflectionHelper.GetMethod(this.GetType(), "GenerateViewForEditor");
                 var editorview = ReflectionHelper.InVoke(editorMethod, this, new object[] { dataFormItemView.Editor, dataFormItem });
                 ReflectionHelper.SetValue(dataFormItemView, "EditorView", editorview);
@@ -115,14 +106,12 @@ namespace CustomizeLabelEditorLayout
                 return dataFormItemView;
             }
             else
-
                 return base.CreateDataFormItemView(rowIndex, columnIndex);
         }
     }
 
     public class DataFormItemViewExt : DataFormItemView
     {
-
         public DataFormItemViewExt()
         {
 

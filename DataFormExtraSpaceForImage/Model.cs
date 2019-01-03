@@ -24,44 +24,31 @@ namespace CustomizeLabelEditorLayout
 
         #endregion
 
-        [DisplayOptions(RowSpan = 5,ShowLabel =false)]
+        [DisplayOptions(RowSpan = 5, ShowLabel = false)]
         public string Image
         {
             get { return this.image; }
-            set
-            {
-                this.image = value;
-            }
+            set { this.image = value; }
         }
 
-        [DisplayOptions(RowSpan =2)]
+        [DisplayOptions(RowSpan = 2)]
         public string Name
         {
-            get
-            {
-                return name;
-            }
+            get { return name; }
             set { this.name = value; }
         }
 
         public string Address
         {
             get { return this.address; }
-            set
-            {
-                this.address = value;
-            }
+            set { this.address = value; }
         }
 
         [Display(Name = "Contact Number")]
         public int? ContactNumber
         {
             get { return this.contactNumber; }
-            set
-            {
-                this.contactNumber = value;
-
-            }
+            set { this.contactNumber = value; }
         }
     }
 }
