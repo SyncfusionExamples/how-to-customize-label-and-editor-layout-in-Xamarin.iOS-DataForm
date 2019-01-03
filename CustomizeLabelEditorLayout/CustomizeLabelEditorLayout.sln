@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomizeLabelEditorLayout", "CustomizeLabelEditorLayout.csproj", "{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhone = Debug|iPhone
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Debug|iPhone.Build.0 = Debug|iPhone
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Release|iPhone.ActiveCfg = Release|iPhone
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Release|iPhone.Build.0 = Release|iPhone
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{D027FB7E-E830-4494-9043-E9CC5BFAEF7D}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {055CF50D-068C-4FF1-907F-B22DCDB94944}
+	EndGlobalSection
+EndGlobal
