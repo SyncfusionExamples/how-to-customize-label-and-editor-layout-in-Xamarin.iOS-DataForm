@@ -9,7 +9,7 @@ namespace CustomizeLabelEditorLayout
     {
         #region Fields
 
-        private int? contactNumber;
+        private string contactNumber;
         private string address;      
         private string name;
         public string image;
@@ -34,7 +34,7 @@ namespace CustomizeLabelEditorLayout
             }
         }
 
-        [DisplayOptions(RowSpan =2)]
+        [DisplayOptions(RowSpan =2, ShowLabel =false)]
         public string Name
         {
             get
@@ -54,7 +54,7 @@ namespace CustomizeLabelEditorLayout
         }
 
         [Display(Name = "Contact Number")]
-        public int? ContactNumber
+        public string ContactNumber
         {
             get { return this.contactNumber; }
             set
