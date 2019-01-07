@@ -34,7 +34,7 @@ namespace CustomizeLabelEditorLayout
             }
         }
 
-        [DisplayOptions(RowSpan =2)]
+        [DisplayOptions(RowSpan =2, ShowLabel =false)]
         public string Name
         {
             get

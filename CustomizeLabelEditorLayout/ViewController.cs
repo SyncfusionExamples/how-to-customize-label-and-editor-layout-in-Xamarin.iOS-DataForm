@@ -26,12 +26,13 @@ namespace CustomizeLabelEditorLayout
             // Perform any additional setup after loading the view, typically from a nib.
 
             dataForm = new SfDataForm();//new CoreGraphics.CGRect(10, 100, this.View.Bounds.Width, this.View.Bounds.Height));
-           
+
             dataForm.LayoutManager = new DataFormLayoutManagerExt(dataForm);
             dataForm.RegisterEditor("ImageEditor", new CustomEditor(this.dataForm));
             dataForm.RegisterEditor("Image", "ImageEditor");
             dataForm.DataObject = new ContactInfo();
             dataForm.BackgroundColor = UIColor.White;
+
             this.View = dataForm;
         }
 
@@ -52,7 +53,8 @@ namespace CustomizeLabelEditorLayout
         }
         protected override UIImageView OnCreateEditorView()
         {
-            var imageView = new UIImageView(UIImage.FromBundle("name.png"));
+            var imageView = new UIImageView(UIImage.FromBundle("Person.png"));
+           
             return imageView;
 
         }
@@ -137,7 +139,7 @@ namespace CustomizeLabelEditorLayout
                 var scrollPanel = ReflectionHelper.GetScrollPanel(sfdataform) as ScrollPanel;
 
                 nfloat ypos = 0;
-                CGRect frame = new CGRect(0, ypos, this.Frame.Width, sfdataform.LabelPosition == LabelPosition.Top ? Convert.ToDouble(ReflectionHelper.GetValue(scrollPanel, "LabelHeight")) : Convert.ToDouble(ReflectionHelper.GetValue(scrollPanel, "RowHeight")));
+                CGRect frame = new CGRect(0, ypos, 250, sfdataform.LabelPosition == LabelPosition.Top ? Convert.ToDouble(ReflectionHelper.GetValue(scrollPanel, "LabelHeight")) : Convert.ToDouble(ReflectionHelper.GetValue(scrollPanel, "RowHeight")));
                 var layotlabel = ReflectionHelper.GetMethod(sfdataform.LayoutManager.GetType(), "LayoutLabel");
                 ReflectionHelper.InVoke(layotlabel, sfdataform.LayoutManager, new object[] { this, frame });
 
@@ -148,10 +150,10 @@ namespace CustomizeLabelEditorLayout
 
                var rowspan= this.DataFormItem.GetType().GetProperty("RowSpan", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Static);
                var rowspanvalue =  rowspan.GetValue(this.DataFormItem);
-                frame = new CGRect(0, ypos + 50, this.Frame.Width, Convert.ToDouble(ReflectionHelper.GetValue(scrollPanel, "RowHeight")) * Convert.ToDouble(rowspanvalue));
+                frame = new CGRect(0, ypos + 50, 250, Convert.ToDouble(ReflectionHelper.GetValue(scrollPanel, "RowHeight")) * Convert.ToDouble(rowspanvalue));
 
-                var layiouteditor = ReflectionHelper.GetMethod(sfdataform.LayoutManager.GetType(), "LayoutEditor");
-                ReflectionHelper.InVoke(layiouteditor, sfdataform.LayoutManager, new object[] { this, frame });
+                var layouteditor = ReflectionHelper.GetMethod(sfdataform.LayoutManager.GetType(), "LayoutEditor");
+                ReflectionHelper.InVoke(layouteditor, sfdataform.LayoutManager, new object[] { this, frame });
 
                 ypos += (nfloat)Convert.ToDouble(ReflectionHelper.GetValue(scrollPanel, "RowHeight")) * (nfloat)Convert.ToDouble(rowspanvalue);
             }
