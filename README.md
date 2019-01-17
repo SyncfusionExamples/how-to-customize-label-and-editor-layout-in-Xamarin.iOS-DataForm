@@ -2,6 +2,8 @@
 
 This example demonstrates how to customize label and editor layout in Xamarin.iOS DataForm.
 
+See [How to customize label and editor layout in Xamarin.iOS DataForm](https://www.syncfusion.com/kb/10072/how-to-customize-label-and-editor-layout-in-xamarin-ios-dataform) for more details.
+
 ## <a name="requirements-to-run-the-demo"></a>Requirements to run the demo ##
 
 * [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) or [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/).
